@@ -6,8 +6,9 @@ de módulo (%). Os números a e b devem ser lidos do usuário. A função
 deve retornar o resultado do cálculo. Por exemplo, se a = 15 e b = 4,
  a função deve retornar 3, que é o módulo de 15 dividido por 4 (15 = 4 x 3 + 3).*/
 
+#include <stdio.h>
 
-int modular(int a, int b);
+int modular(int A, int B);
 
 int main(void)
 {
@@ -18,11 +19,21 @@ int main(void)
     printf("Entre com o numero que dividira:");
     scanf("%d", &num2);
 
-    printf("O resultado do modulo de %d e %d eh ## %d ##", num, num2, modular(num, num2));
 
+    printf("\n\nO resultado do modulo de %d e %d eh ## %d ##", num, num2, modular(num, num2));
+
+    return 0;
 }
 
-int modular(int a, int b)
+
+
+int modular(int A, int B)
 {
+    if(A<B) 
+        return A;
+ 
+    if((A-B)>0)
+        return modular(A-B,B);
     
+    return 0;
 }
