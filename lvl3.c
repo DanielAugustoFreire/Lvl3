@@ -31,9 +31,6 @@ int modular(int A, int B)
 {
     if(A<B) 
         return A;
- 
-    if((A-B)>0)
+    else
         return modular(A-B,B);
-    
-    return 0;
 }
